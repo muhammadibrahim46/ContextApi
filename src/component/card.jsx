@@ -1,10 +1,15 @@
 import React from 'react'
-import khan from './spotyfi.jpg'
+import khan from './ibrahim.jpg'
+
 function Card() {
   return (
-    <div className='khan'>
-      <img  src={khan} alt="Khan" />
-      <h1>apple watch series 7 gps ,aluminum case, <br />starlight sport 349-9382</h1>
+    <div className="bg-gray-900 p-4 rounded-lg shadow-lg w-80 mx-auto h-100  mt-10 text-center transition-colors duration-500">
+      <img className="w-40 h-50 rounded-t-full mx-auto mt-10" src={khan} alt="Khan" />
+      <h1 className="text-white dark:text-white font-bold text-sm mt-20 ">
+        Apple Watch Series 7 GPS, Aluminum Case,
+        <br />
+        Starlight Sport 349-9382
+      </h1>
     </div>
   )
 }
