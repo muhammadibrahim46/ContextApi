@@ -1,13 +1,17 @@
-import { createContext, useContext } from "react";
+import { createContext, useState } from "react";
 
-export const ThemeContext = createContext({
-  themeMode: "dark",
-  darkTheme: () => {},
-  lightTheme: () => {},
-});
+export const ToggleContext = createContext();
 
-export const ThemeProvider = ThemeContext.Provider;
+export function ToggleProvider({ children }) {
+  const [isToggled, setIsToggled] = useState(false);
 
-export default function UseTheme() {
-  return useContext(ThemeContext);
+  const toggleTheme = () => {
+    setIsToggled((prev) => !prev);
+  };
+
+  return (
+    <ToggleContext.Provider value={{ isToggled, toggleTheme }}>
+      {children}
+    </ToggleContext.Provider>
+  );
 }
